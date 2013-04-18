@@ -1,0 +1,251 @@
+//---------------------------------------------------------
+// CAPTAIN  SLOG
+//---------------------------------------------------------
+//
+//	FILE:		biotools.js	
+//	SYSTEM:		biotools (AJAX Demonstration)	
+//	AUTHOR:		Mark Addinall
+//	DATE:		24 December 2008
+//	SYNOPSIS:	This new system was researched and written
+//				for a number of reasons, the primary
+//				reason being the requirementto
+//				load as few pages as possible.
+//				As you can see using the
+//				JQuery route, we have simplified the
+//				structure of the application.
+//				The look and feel is completely
+// 				handled by the CSS so change away....
+// 				I have managed to keep formatting away
+// 				from HTML, so far.  The lists of objects
+// 				are going to be a challenge....
+//
+// 				There is another VERY VERY VERY good reason for using
+// 				the JQuery architecture as the AJAX method to
+// 				get to the back end.  Since it uses DOM and not
+//				all sortsa weird protocols, the back end
+//				still sees the good old familiar $_GET and $_PUT
+//				super globals.  This means, that in a few years
+//				time when the user gets:
+//				1. Faster machines
+//				2. Faster networks
+//				Of course, the major problemd using DOM are the browser 
+//				compatibility issues and the fact that DOM is a mess.
+//
+//				The back-end DB routines will still be safe,
+//				all of the server side validation will still be OK,
+//				the classes and methods will remain intact.
+//
+// set tabstops to 4 to be able to read this.
+//
+//------------+-------------------------------+------------
+// DATE       |    CHANGE                     |    WHO
+//------------+-------------------------------+------------
+// 24/12/2008 | Initial creation              |  MA
+//------------+-------------------------------+------------
+
+
+
+// First we'll put in the picture handling stuff.
+// It gives people something to look at as the background
+// tabs are initialising
+//
+
+// OK, we're in,do it.
+
+$(document).ready(function() 
+	{		
+	
+	//Execute the slideShow
+	slideShow();
+
+	});
+
+function slideShow() {
+
+	//Set the opacity of all images to 0
+	$('#gallery a').css({opacity: 0.0});
+	
+	//Get the first image and display it (set it to full opacity)
+	$('#gallery a:first').css({opacity: 1.0});
+	
+	//Set the caption background to semi-transparent
+	$('#gallery .caption').css({opacity: 0.7});
+
+	//Resize the width of the caption according to the image width
+	$('#gallery .caption').css({width: $('#gallery a').find('img').css('width')});
+	
+	//Get the caption of the first image from REL attribute and display it
+	$('#gallery .content').html($('#gallery a:first').find('img').attr('rel'))
+	.animate({opacity: 0.7}, 400);
+	
+	//Call the gallery function to run the slideshow, 6000 = change to next image after 6 seconds
+	setInterval('gallery()',6000);
+	
+}
+
+function gallery() {
+	
+	//if no IMGs have the show class, grab the first image
+	var current = ($('#gallery a.show')?  $('#gallery a.show') : $('#gallery a:first'));
+
+	//Get next image, if it reached the end of the slideshow, rotate it back to the first image
+	var next = ((current.next().length) ? ((current.next().hasClass('caption'))? $('#gallery a:first') :current.next()) : $('#gallery a:first'));	
+	
+	//Get next image caption
+	var caption = next.find('img').attr('rel');	
+	
+	//Set the fade in effect for the next image, show class has higher z-index
+	next.css({opacity: 0.0})
+	.addClass('show')
+	.animate({opacity: 1.0}, 1000);
+
+	//Hide the current image
+	current.animate({opacity: 0.0}, 1000)
+	.removeClass('show');
+	
+	//Set the opacity to 0 and height to 1px
+	$('#gallery .caption').animate({opacity: 0.0}, { queue:false, duration:0 }).animate({height: '1px'}, { queue:true, duration:300 });	
+	
+	//Animate the caption, opacity to 0.7 and heigth to 100px, a slide up effect
+	$('#gallery .caption').animate({opacity: 0.7},100 ).animate({height: '100px'},500 );
+	
+	//Display the content
+	$('#gallery .content').html(caption);
+	
+	
+}
+
+// this small block binds our XHTML/CSS container with our tabs
+// function.  Being a 'single page' architecture with a significant amount
+// of content, I decided to use a multi-tabbed method of build.
+
+$(function() 
+	{
+	$('#container').tabs();
+	}
+) ;
+
+
+// this next one is setting up some AJAX
+// for a user to log onto the system
+//
+// It maps INTO the DOC object login_form
+// removes two values username and password
+// and inserts a result into the div login status
+// It then uses AJAX to log the user onto the system and database
+
+$(document).ready(function() 
+		{			
+		$("#login_form").submit(function() 
+			{				
+			var unameval = $("#username").val();				
+			var pwordval = $("#password").val();				
+			$.post("login.php", { 	username: unameval,
+									password: pwordval }, 
+									function(data) 
+										{					
+										$("#login_status p").html(data);	
+										});				
+			return false;			
+			});		
+		});
+
+
+// This next one is called from the same screen as
+// the above, however uses a different form.
+// This function will call an AJAX partner that
+// will attempt to register the user in the database
+// This will allow the user to then logon to the system.
+
+$(document).ready(function() 
+	{			
+	$("#register_form").submit(function() 
+			{				
+			var unameval = $("#username").val();				
+			var pwordval = $("#password").val();				
+			$.post("register.php", {	username: unameval,
+										password: pwordval }, 
+										function(data) 
+											{					
+											$("#register_status p").html(data);	
+											});				
+			return false;			
+			});		
+	});	
+
+
+
+// This next group of functions sets up a call to the 
+// NCBI proteomic database.  It is using a slightly older method
+// than the JQuery Framework.  I am yet to research how to do that,
+// and time is an issue ;-)
+
+
+//--------------------
+function showName(str)
+{
+// a boolean to store the result of an XML request
+
+var xmlHttp
+
+// call Javascript for an instance of the XML-HTTP object
+
+xmlHttp = GetXmlHttpObject()
+
+// if it fails, warn th operator, and exit
+
+if (xmlHttp == null)
+	{
+	alert ("Browser does not support HTTP Request")
+	return
+	}
+
+var url = "php/ncbi.php"
+url = url + "?q="+str
+url=url+"&sid="+Math.random()
+xmlHttp.onreadystatechange=stateChanged
+xmlHttp.open("GET",url,true)
+xmlHttp.send(null)
+}
+
+function stateChanged()
+{
+document.getElementById("geneName").innerHTML = "Fetching XML file..."
+if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete")
+{
+var response = xmlHttp.responseText
+if (!response)      {
+document.getElementById("geneName").innerHTML="No data returned!"
+}
+else {
+document.getElementById("geneName").innerHTML=response
+}
+}
+}
+
+function GetXmlHttpObject()
+{
+var xmlHttp=null;
+try
+{
+// Firefox, Opera 8.0+, Safari
+xmlHttp=new XMLHttpRequest();
+}
+catch (e)
+{
+// Internet Explorer
+try
+{
+xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
+}
+catch (e)
+{
+xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+}
+return xmlHttp;
+}
+
+
+
+

@@ -1,0 +1,318 @@
+/*
+W3C CSS Validator results for http://ehealth.addinall.org (CSS level 3)
+
+Congratulations! No Error Found.
+This document validates as CSS level 3 !
+*/
+
+body {
+margin: 0;
+padding: 0;
+font: 75% tahoma, Verdana, Arial, sans-serif;
+line-height: 1.8em;
+background: #eaeaea  url(images/bg.jpg) top left repeat-x;
+}
+		/*TOP BANNER*/
+#header {
+padding: 20px;
+border-bottom: 1px solid #fff;
+background: #333;
+}
+#header h1 {
+padding: 0;
+margin: 0;
+font-family: Georgia, sans-serif;
+font-weight: normal;
+font-size: 180%;
+color: #ccc;
+}
+
+		/* TOP NAVIGATION */
+#nav {
+float: left;
+width: 100%;
+margin: 0;
+padding: 0;
+list-style: none;
+background: #ccc;
+}
+#nav li {
+float: left;
+margin: 0;
+padding: 0;
+}
+#nav a {
+float: left;
+display: block;
+padding: 0.5em 2.5em 0.5em 1em;
+text-decoration: none;
+font-weight: bold;
+font-size: 100%;
+color: #73868c;
+background: #ccc url(images/nav_slant.gif) no-repeat top right;
+}
+#nav #nav-1 a {
+padding-left: 20px;
+}
+#nav a:hover {
+color: #000;
+}
+		/*MAIN CONTAINER*/
+#container {
+margin: 0 auto;
+padding: 0;
+width: 770px;
+}
+#contentleft {
+float: left;
+margin-top: 8px;
+width: 450px;
+padding: 0 1em 1em 1em;
+}
+#contentright {
+float: right;
+margin-top: 8px;
+width: 200px;
+padding: 0 1em 1em 1em;
+background: #aaa;
+}
+		/* BLOG QUOTE */
+
+blockquote {
+background:#f9f9f9;
+border: inset;
+margin:1.5em 10px;
+padding:.5em 10px;
+width: 400px;
+font: italic normal 12pt/1.2em Georgia;
+color: #888;
+}
+
+blockquote p:before {
+color:#ccc;
+content:'"';
+font-size:1.5em;
+}
+
+blockquote p:after {
+color:#ccc;
+content:'"';
+font-size:1.5em;
+}
+
+
+		/*FOOTER */
+#footer {
+font-size: 1em;
+clear:both;
+margin:0;
+padding: 0.5em;
+background: #333;
+color: #aaa;
+}
+		/*TYPOGRAPHY */
+h1 {
+font-family: Georgia, serif;
+font-size: 180%;
+padding: 30px 0 10px 0;
+color: #73868c;
+}	
+
+h2 {
+font-family: Georgia, sans-serif;
+font-size: 180%;
+padding: 30px 0 10px 0;
+color: #333;
+}
+		/*LINKS*/	
+a:link, a:visited {
+color : #666;
+background : inherit;
+text-decoration : underline;
+}
+a:hover {
+color : #73868c;
+background : inherit;
+text-decoration : none;
+}	
+ul li {
+list-style-type: none;
+}
+.navlist ul li {
+list-style-image : url(images/arrow.gif);
+padding-left : 5px;
+margin-bottom : 0;
+} 
+a img {
+border: none;	
+}
+		/* IMAGES */	
+.imgleft { 
+float : left;
+padding : 5px;
+margin-right : 10px;
+} 
+.imgright { 
+float : right;
+padding : 5px;
+margin-left : 10px;
+} 
+
+
+.imgleftactive { 
+float : left;
+padding : 5px;
+margin-right : 10px;
+} 
+#bottom {
+margin: 0 auto;
+width: 770px;
+}
+
+#bottom h1 {
+margin: 0;
+letter-spacing: 3px;
+font-family: Georgia, sans-serif;
+font-size: 130%;
+padding: 10px 0 10px 40px;
+color: #73868c;
+}
+
+
+#gallery {
+	position:relative;
+	height:380px;
+	font-weight:bold;
+	font-size:145%;
+}
+	#gallery a {
+		float:left;
+		position:absolute;
+	}
+	
+	#gallery a img {
+		border-style:inset;
+	}
+	
+	#gallery a.show {
+		z-index:500
+	}
+
+	#gallery .caption {
+		z-index:600; 
+		background-color:#000; 
+		color:#ffffff; 
+		height:100px; 
+		width:100%; 
+		position:absolute;
+		bottom:0;
+	}
+
+	#gallery .caption .content {
+		margin:5px
+	}
+	
+
+#tagcloud {
+font-family:Courier;
+font-weight:bold;
+margin-top:50px;
+}
+
+
+#tagcloud a{
+text-decoration: none; 
+}
+
+
+#tagcloud a:hover {
+text-decoration: underline;
+}
+
+
+#tagcloud ul{
+list-style-type:none;
+margin: 0px;
+padding: 0px;
+}
+
+#tagcloud li {
+display: inline;
+margin-right: 10px;
+line-height: 2em;
+}
+
+#tagcloud a.tagrank-1{
+font-size: 120%;
+color:#000000;
+}
+
+
+#tagcloud a.tagrank-2 {
+font-size: 130%;
+color: #006B8F;
+}
+
+#tagcloud a.tagrank-3 {
+font-size: 140%;
+color: #003D52;
+}
+
+#tagcloud a.tagrank-4 {
+font-size: 150%;
+color: #007AA3;
+}
+
+#tagcloud a.tagrank-5 {
+font-size: 160%;
+color: #0099CC;
+}
+
+#tagcloud a.tagrank-6 {
+font-size: 170%;
+color: #33ADD6;
+}
+
+
+
+#tagcloud a.tagrank-7 {
+font-size: 180%;
+color: #66C2E0;
+}
+
+#tagcloud a.tagrank-8 {
+font-size: 190%;
+color: #66C2E0;
+}
+
+#tagcloud a.tagrank-9 {
+font-size: 200%;
+color: #66C2E0;
+}
+
+#tagcloud a.tagrank-10 {
+font-size: 210%;
+color: #66C2e0;
+}
+
+#blogger {
+		margin-top: 5px;
+        width: 445px;
+        height: 120px;
+        border: inset;
+        padding: 5px;
+        font-family: Tahoma, sans-serif;
+        font-size: 120%;
+        background-image: url(cloudback3.jpg);
+        background-repeat: no-repeat;
+		resize: none;
+}
+
+
+
+
+
+
+
+
+
