@@ -2,19 +2,19 @@
 // vim: set tabstop=4 shiftwidth=4 expandtab autoindent smartindent :
 // CAPTAIN  SLOG
 //
-//	FILE:		eheader.php
-//	SYSTEM:		eHealth	
-//	AUTHOR:		Mark Addinall
-//	DATE:		24 June 2009
-//	SYNOPSIS:	Everyone is talking about eHealth, with the NBN
-//				on its way.  And as usual, no-one is doing anything
-//				about it.  Well, IBM are.  So, I thought I would
-//				spend some time coding an experimental demonstration
-//				that shows, and discusses some of the subjects
-//				considered as part of the eHealth bag of goods
-//				that is about to transform the world.
+//  FILE:       eheader.php
+//  SYSTEM:     eHealth 
+//  AUTHOR:     Mark Addinall
+//  DATE:       24 June 2009
+//  SYNOPSIS:   Everyone is talking about eHealth, with the NBN
+//              on its way.  And as usual, no-one is doing anything
+//              about it.  Well, IBM are.  So, I thought I would
+//              spend some time coding an experimental demonstration
+//              that shows, and discusses some of the subjects
+//              considered as part of the eHealth bag of goods
+//              that is about to transform the world.
 //
-//				STANDARD HEADER FILE.  lOGO AND MENU.
+//              STANDARD HEADER FILE.  lOGO AND MENU.
 //
 // DATE       |    CHANGE                     |    WHO
 // 24/09/2010 | Initial creation              |  MA
@@ -44,7 +44,7 @@
 <link rel="stylesheet" type="text/css" href="js/shadow/shadowbox.css" />
 <script type="text/javascript" src="js/shadow/shadowbox.js"></script>
 <script type="text/javascript">
-	Shadowbox.init();
+    Shadowbox.init();
 </script>
 
 <link href="css/style.css" rel="stylesheet" type="text/css" />

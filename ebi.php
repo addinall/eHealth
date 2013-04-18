@@ -3,20 +3,20 @@
 // vim: set tabstop=4 shiftwidth=4 expandtab autoindent smartindent :
 // CAPTAIN  SLOG
 //
-//	FILE:		ebi.php
-//	SYSTEM:		eHealth	
-//	AUTHOR:		Mark Addinall
-//	DATE:		24 June 2010
-//	SYNOPSIS:	Everyone is talking about eHealth, with the NBN
-//				on its way.  And as usual, no-one is doing anything
-//				about it.  Well, IBM are.  So, I thought I would
-//				spend some time coding an experimental demonstration
-//				that shows, and discusses some of the subjects
-//				considered as part of the eHealth bag of goods
-//				that is about to transform the world.
+//  FILE:       ebi.php
+//  SYSTEM:     eHealth 
+//  AUTHOR:     Mark Addinall
+//  DATE:       24 June 2010
+//  SYNOPSIS:   Everyone is talking about eHealth, with the NBN
+//              on its way.  And as usual, no-one is doing anything
+//              about it.  Well, IBM are.  So, I thought I would
+//              spend some time coding an experimental demonstration
+//              that shows, and discusses some of the subjects
+//              considered as part of the eHealth bag of goods
+//              that is about to transform the world.
 //
-//				This module discusses the use of BI techniques as can
-//				be applied to various data in Life Sciences fields.
+//              This module discusses the use of BI techniques as can
+//              be applied to various data in Life Sciences fields.
 //
 //
 // DATE       |    CHANGE                     |    WHO
@@ -33,26 +33,26 @@ require_once("eheader.php");
   <div id="contentleft">
     <h1>Welcome to <span style="font-weight:bold; color:#C4DA64;">eBI</span> Discussion</h1>
     <p><img class="imgleft" src="images/info.png" alt="" /><strong> 
-	This section brings up a discussion regarding the use of Business Intelligence methods, techniques and philosophies as can be adapted to various data from the collection of life Sciences.</strong>
-	</p>
+    This section brings up a discussion regarding the use of Business Intelligence methods, techniques and philosophies as can be adapted to various data from the collection of life Sciences.</strong>
+    </p>
 
     <p>
 
 
 <center><h2>Business Intelligence - Life Science</h2></center>
-				<img src="images/bi.jpg" 
-				style="border: inset;" alt="BI person"  width="450"/>
-				</p>
-			
-	<div class="caption">
-		<div class="content" align="justify">
-			<p>
-			This page will attempt to explain some of the history of, the importance of and the implementation of Data Warehousing and Business Intelligence Systems without using too much jargon.  In this field, a lot of new names have been introduced to describe some old, but useful concepts.  Here we will define Data Warehousing, the difference between Data Warehousing and Business Intelligence, some different models of Data Warehousing Architecture.  We will discuss Business Intellegence and the various forms it may take within an organisation, from Data Mining through to Process Automation, with a bent on the use withing the life sciences.
-			</p>
-			<p>
+                <img src="images/bi.jpg" 
+                style="border: inset;" alt="BI person"  width="450"/>
+                </p>
+            
+    <div class="caption">
+        <div class="content" align="justify">
+            <p>
+            This page will attempt to explain some of the history of, the importance of and the implementation of Data Warehousing and Business Intelligence Systems without using too much jargon.  In this field, a lot of new names have been introduced to describe some old, but useful concepts.  Here we will define Data Warehousing, the difference between Data Warehousing and Business Intelligence, some different models of Data Warehousing Architecture.  We will discuss Business Intellegence and the various forms it may take within an organisation, from Data Mining through to Process Automation, with a bent on the use withing the life sciences.
+            </p>
+            <p>
 <strong>What is Data - Data Warehousing - Business Intelligence?</strong>  First I would like to separate these three definitions, as more often than not, they are being used interchangeably.  All organizations have data, be stored, transient, or more often than not, a mixture of both. Business Intelligence does quite often include a Data Warehouse, although it need not.  Conversely, an organization can own a Data Warehouse without deriving much, if any Business Intelligence from the repository.
-			</p>
-			<p>
+            </p>
+            <p>
 <h2>Data We all use it.  What is it?</h2>
 
 Pronunciation: 'dA-t&, 'da- also 'dä-<br>
@@ -115,9 +115,9 @@ So we see that a Business Intelligence System when implemented is a mixture of o
 <p>
 Because the industry is still in the very early stages of achieving a fully functional electronic health records (eHR) system, which would enable the sharing of information among hospitals, clinics and other providers in a way that protects individual patient privacy, most medical professionals prefer to use paper records or their own proprietary system for keeping eHRs. But what if a system could bring together all these flat and static pieces to derive a dynamic and full picture of a patient's health status in real-time? And what if the system were to provide this information in an intuitive and sophisticated way?
 </p>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </div>
 <!-- END OF CONTENT LEFT DIV -->
 
 
@@ -126,7 +126,7 @@ Because the industry is still in the very early stages of achieving a fully func
 
   <div id="contentright">
 
-	<?php require_once("erhside.php"); ?>
+    <?php require_once("erhside.php"); ?>
 
 This page is far too large.  Even after cutting out some five hundred words from my origional text.  The subject is broad and complex in nature and is in it's infancy even as we enter 2011.  BI techniques can be applied to: <br />
 <em><strong>
