@@ -84,7 +84,7 @@
 //            | checked as XHTML 1.0          |
 //            | Transitional!                 |  MA
 // 03/06/2012 | This document was successfully|  MA
-//              validated as HTML5
+//            | validated as HTML5
 //
 //
 // set tabstops to 4 to be able to read this.
